@@ -176,3 +176,24 @@ void printRoutesByLocation(MARSHRUT* routes, int count, const char* location) {
 				}
 		}
 }
+
+/*
+Функция: printSchoolkid
+Выводит информацию об одном школьнике.
+Параметры:
+		- k: указатель на структуру Schoolkid
+*/
+void printSchoolkid(const Schoolkid *k) {
+		printf("ФИО: %s %s %s\n", k->surname, k->name, k->patronymic);
+		printf("Пол: %c, Национальность: %s\n", k->gender, k->nationality);
+		printf("Рост: %d см, Вес: %d кг\n", k->height, k->weight);
+		printf("Дата рождения: %d-%02d-%02d\n", 
+					 k->birth_date.year, k->birth_date.month, k->birth_date.day);
+		printf("Телефон: %s\n", k->phone);
+		printf("Адрес: %s, %s, %s, %s, %s, ул. %s, д. %d, кв. %d\n",
+					 k->home_address.postal_code, k->home_address.country,
+					 k->home_address.region, k->home_address.district,
+					 k->home_address.city, k->home_address.street,
+					 k->home_address.house, k->home_address.apartment);
+		printf("Школа: %s, Класс: %s\n\n", k->school, k->class);
+}
