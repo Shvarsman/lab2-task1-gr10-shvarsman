@@ -159,3 +159,20 @@ void sortRoutesByNumber(MARSHRUT* routes, int count) {
 				}
 		}
 }
+
+/*
+Функция: printRoutesByLocation
+Выводит маршруты, начинающиеся или заканчивающиеся в указанном пункте.
+Параметры:
+		- routes: массив структур MARSHRUT.
+		- count: количество маршрутов.
+		- location: название пункта.
+*/
+void printRoutesByLocation(MARSHRUT* routes, int count, const char* location) {
+		for (int i = 0; i < count; i++) {
+				if (strcmp(routes[i].start, location) == 0 || strcmp(routes[i].end, location) == 0) {
+						printf("Маршрут %d: %s -> %s, Длина: %d\n",
+									 routes[i].number, routes[i].start, routes[i].end, routes[i].length);
+				}
+		}
+}
