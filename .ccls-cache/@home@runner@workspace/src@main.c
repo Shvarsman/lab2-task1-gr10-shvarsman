@@ -213,3 +213,44 @@ void printSeventhClass(Schoolkid *kids, int count) {
 				}
 		}
 }
+
+int main() {
+		int numbers[] = {123, 456, 789, 12, 34};
+		int size = sizeof(numbers) / sizeof(numbers[0]);
+		sortByDigitSum(numbers, size);
+		printf("Отсортированный массив: ");
+		for (int i = 0; i < size; i++) {
+				printf("%d ", numbers[i]);
+		}
+		printf("\n");
+
+		MARSHRUT routes[MAX_ROUTES];
+		int count;
+		createRoutes(routes, &count);
+
+		MARSHRUT longest = findLongestRoute(routes, count);
+		printf("Самый длинный маршрут: %s -> %s, Длина: %d\n",
+					 longest.start, longest.end, longest.length);
+
+		sortRoutesByNumber(routes, count);
+		printRoutesByLocation(routes, count, "A");
+
+		Schoolkid kids[MAX_KIDS] = {
+				{
+						"Иванов", "Петр", "Сергеевич", 'M', "Туркмен",
+						175, 65, {2002, 5, 15}, "+99365479797",
+						{"123456", "Туркменистан", "Ахал", "Копетдаг", "Ашхабад", "Ленина", 15, 34},
+						"Школа №55", "7А"
+				},
+				{
+						"Петрова", "Мария", "Ивановна", 'F', "Русская",
+						160, 50, {2009, 3, 12}, "+79031234567",
+						{"654321", "Россия", "Ленинградская", "Кировский", "Санкт-Петербург", "Пушкина", 42, 5},
+						"Гимназия №5", "8B"
+				}
+		};
+
+		printSeventhClass(kids, 2);
+
+		return 0;
+}
