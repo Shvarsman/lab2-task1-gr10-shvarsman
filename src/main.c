@@ -80,3 +80,22 @@ int sumOfDigits(int number) {
 		}
 		return sum;
 }
+
+/*
+Функция: sortByDigitSum
+Сортирует массив чисел по убыванию суммы цифр.
+Параметры:
+		- array: массив чисел.
+		- size: размер массива.
+*/
+void sortByDigitSum(int* array, int size) {
+		for (int i = 0; i < size - 1; i++) {
+				for (int j = i + 1; j < size; j++) {
+						if (sumOfDigits(array[i]) < sumOfDigits(array[j])) {
+								int temp = array[i];
+								array[i] = array[j];
+								array[j] = temp;
+						}
+				}
+		}
+}
