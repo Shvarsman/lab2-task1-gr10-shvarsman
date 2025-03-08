@@ -123,3 +123,20 @@ void createRoutes(MARSHRUT* routes, int* count) {
 				scanf("%d", &routes[i].length);
 		}
 }
+
+/*
+Функция: findLongestRoute
+Находит и возвращает маршрут с максимальной длиной.
+Параметры:
+		- routes: массив структур MARSHRUT.
+		- count: количество маршрутов.
+*/
+MARSHRUT findLongestRoute(MARSHRUT* routes, int count) {
+		MARSHRUT longest = routes[0];
+		for (int i = 1; i < count; i++) {
+				if (routes[i].length > longest.length) {
+						longest = routes[i];
+				}
+		}
+		return longest;
+}
