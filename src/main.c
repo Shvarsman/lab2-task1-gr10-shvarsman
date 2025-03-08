@@ -197,3 +197,19 @@ void printSchoolkid(const Schoolkid *k) {
 					 k->home_address.house, k->home_address.apartment);
 		printf("Школа: %s, Класс: %s\n\n", k->school, k->class);
 }
+
+/*
+Функция: printSeventhClass
+Выводит список учеников 7-х классов.
+Параметры:
+		- kids: массив структур Schoolkid
+		- count: количество элементов в массиве
+*/
+void printSeventhClass(Schoolkid *kids, int count) {
+		printf("Ученики 7-х классов:\n");
+		for (int i = 0; i < count; i++) {
+				if (kids[i].class[0] == '7') {
+						printSchoolkid(&kids[i]);
+				}
+		}
+}
