@@ -52,3 +52,31 @@ typedef struct {
 		char school[MAX_STRING_LEN];
 		char class[10];
 } Schoolkid;
+
+//Декларация функций
+int sumOfDigits(int number);
+void sortByDigitSum(int* array, int size);
+void createRoutes(MARSHRUT* routes, int* count);
+MARSHRUT findLongestRoute(MARSHRUT* routes, int count);
+void sortRoutesByNumber(MARSHRUT* routes, int count);
+void printRoutesByLocation(MARSHRUT* routes, int count, const char* location);
+void printSchoolkid(const Schoolkid *k);
+void printSeventhClass(Schoolkid *kids, int count);
+
+
+//Определения функций
+
+/*
+Функция: sumOfDigits
+Возвращает сумму цифр числа.
+Параметры:
+		- number: число, сумму цифр которого нужно вычислить.
+*/
+int sumOfDigits(int number) {
+		int sum = 0;
+		while (number != 0) {
+				sum += number % 10;
+				number /= 10;
+		}
+		return sum;
+}
