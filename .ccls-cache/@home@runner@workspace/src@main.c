@@ -140,3 +140,22 @@ MARSHRUT findLongestRoute(MARSHRUT* routes, int count) {
 		}
 		return longest;
 }
+
+/*
+Функция: sortRoutesByNumber
+Сортирует маршруты по возрастанию номеров.
+Параметры:
+		- routes: массив структур MARSHRUT.
+		- count: количество маршрутов.
+*/
+void sortRoutesByNumber(MARSHRUT* routes, int count) {
+		for (int i = 0; i < count - 1; i++) {
+				for (int j = i + 1; j < count; j++) {
+						if (routes[i].number > routes[j].number) {
+								MARSHRUT temp = routes[i];
+								routes[i] = routes[j];
+								routes[j] = temp;
+						}
+				}
+		}
+}
