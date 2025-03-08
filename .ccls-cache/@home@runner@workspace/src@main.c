@@ -99,3 +99,27 @@ void sortByDigitSum(int* array, int size) {
 				}
 		}
 }
+
+/*
+Функция: createRoutes
+Создает массив маршрутов (ввод данных с клавиатуры).
+Параметры:
+		- routes: массив структур MARSHRUT.
+		- count: указатель на переменную, хранящую количество маршрутов.
+*/
+void createRoutes(MARSHRUT* routes, int* count) {
+		printf("Введите количество маршрутов (не более %d): ", MAX_ROUTES);
+		scanf("%d", count);
+
+		for (int i = 0; i < *count; i++) {
+				printf("Маршрут %d:\n", i + 1);
+				printf("Номер маршрута: ");
+				scanf("%d", &routes[i].number);
+				printf("Начальный пункт: ");
+				scanf("%s", routes[i].start);
+				printf("Конечный пункт: ");
+				scanf("%s", routes[i].end);
+				printf("Длина маршрута: ");
+				scanf("%d", &routes[i].length);
+		}
+}
